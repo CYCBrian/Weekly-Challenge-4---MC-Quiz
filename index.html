@@ -18,7 +18,6 @@
     <section class="start-box">
         <h1 class="title">MC Quiz</h1>
 
-        <section class="rules-box">
             <h2 class="rules-title">Rules:</h2>
             <ul class="rules-list">
                 <li class="rules">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, consequatur.</li>
@@ -29,7 +28,7 @@
                 <li class="rules">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, quisquam!</li>
             </ul>
             <button class="start-btn">Start Quiz</button>
-        </section>
+        
     </section>
 
     <section class="quiz-box">
@@ -52,7 +51,7 @@
         <form class="name-form">
             <label for="nameInput">Enter your initials:</label>
             <input type="text" class="name-input" required>
-            <button type="submit">Submit</button>
+            <button class="submit-btn" type="submit">Submit</button>
         </form>
     </section>
 
@@ -61,10 +60,12 @@
         <ul class="highscores-list">
             <!-- javascript stuff -->
         </ul>
-        <button class="restart-btn">Restart The Quiz</button>
-        <button>Clear Highscores
-            <!-- javascript stuff - set something to null? -->
-        </button>
+        <section class="highscores-buttons">
+            <button class="restart-btn">Restart The Quiz</button>
+            <button class="clear-btn">Clear Highscores
+                <!-- javascript stuff - set something to null? -->
+            </button>
+        </section>
     </section>
 
     <script src="./Assets/javascript/script.js"></script>
