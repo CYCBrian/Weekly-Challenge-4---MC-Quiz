@@ -7,3 +7,57 @@
 .timer{
     display: flex;
 }
+
+.start-box,
+.quiz-box,
+.result-box,
+.highscores-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start-btn,
+.submit-btn,
+.restart-btn,
+.clear-btn{
+    background-color: rgb(140, 40, 230);
+    color: aliceblue;
+    border-radius: 5px;
+    border-color: rgb(140, 40, 230);
+    padding: 3px;
+    cursor: pointer;
+}
+
+.start-btn:hover,
+.submit-btn:hover,
+.restart-btn:hover,
+.clear-btn:hover{
+    background-color: rgb(160, 115, 201);
+    transition: .2s;
+    border-color: rgb(160, 115, 200);
+}
+
+
+
+
+
+.start-box.activeStart,
+.quiz-box.activeQuiz,
+.result-box.activeResult,
+.highscores-box.activeResult{
+    opacity: 1;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+}
+
+.start-box.inActiveStart,
+.quiz-box.inActiveQuiz,
+.result-box.inActiveResult,
+.highscores-box.inActiveResult{
+    display: none;
+}
