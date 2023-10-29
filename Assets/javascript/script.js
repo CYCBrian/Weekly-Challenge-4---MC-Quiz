@@ -74,6 +74,9 @@ var restartBtn = document.querySelector(".restart-btn");
 var clearBtn = document.querySelector(".clear-btn");
 var timerCount = 60;
 var userScore = 0;
+var selectedQuestion;
+var originalQuizQuestions = [...quizQuestions];
+var timer=
 
 window.addEventListener('load', function() {
     quizBox.classList.add("inactiveQuiz");
@@ -93,13 +96,14 @@ submitBtn.addEventListener('click',function(){
     quizBox.classList.add("inactiveQuiz");
     resultBox.classList.add("inactiveResult");
     highscoresBox.classList.remove("inactiveHighscores");
-})
+});
 
 restartBtn.addEventListener('click',function(){
     startBox.classList.remove("inactiveStart")
     quizBox.classList.add("inactiveQuiz");
     resultBox.classList.add("inactiveResult");
     highscoresBox.classList.add("inactiveHighscores");
+    quizQuestions = [...originalQuizQuestions];
 })
 
 function gameOver(){
@@ -109,8 +113,9 @@ function gameOver(){
 
 
 function startTimer() {
+    timerCount = 60
     timerDisplay.textContent = timerCount;
-    let timer = setInterval(function() {
+    timer = setInterval(function() {
         timerCount--;
         timerDisplay.textContent = timerCount;
     if (timerCount === 0) {
@@ -121,23 +126,28 @@ function startTimer() {
 }
 
 function displayQuestion() {
+    if (quizQuestions.length === 0) {
+      gameOver();
+      clearInterval(timer);
+      return;
+    }
+
     var randomIndex = Math.floor(Math.random() * quizQuestions.length);
-    var selectedQuestion = quizQuestions[randomIndex];
+    selectedQuestion = quizQuestions[randomIndex];
     questionElement.textContent = selectedQuestion.question;
     optionList.innerHTML = "";
     selectedQuestion.options.forEach(function(option) {
       var optionItem = document.createElement("li");
       optionItem.textContent = option;
       optionList.appendChild(optionItem);
-      optionItem.classList.add("options")
-      optionItem.classList.add("options:hover")
+      optionItem.classList.add("options");
+      optionItem.classList.add("options:hover");
     });
     quizQuestions.splice(randomIndex, 1);
     for (let i = 0; i < selectedQuestion.options.length; i++) {
-        optionList.children[i].setAttribute("onclick", "optionSelected(this)");
-      }
-    if (quizQuestions.length === 0){
-        gameOver();
+      optionList.children[i].addEventListener("click", function() {
+        optionSelected(this);
+      });
     }
   }
 
@@ -148,6 +158,7 @@ function displayQuestion() {
         userScore += 1;
         correctWrong.textContent = "Correct!";
       } else {
+        timerCount -=3;
         correctWrong.textContent = "Wrong!";
       }
     displayQuestion();
