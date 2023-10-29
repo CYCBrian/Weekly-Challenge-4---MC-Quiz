@@ -17,6 +17,8 @@
 
 .view-highscores{
     text-decoration: none;
+    cursor: pointer;
+    margin-top: 0;
 }
 
 .timer{
@@ -57,10 +59,10 @@
     transform: translate(-50%, -50%);
 }
 
-.start-box.inActiveStart,
-.quiz-box.inActiveQuiz,
-.result-box.inActiveResult,
-.highscores-box.inActiveResult{
+.start-box.inactiveStart,
+.quiz-box.inactiveQuiz,
+.result-box.inactiveResult,
+.highscores-box.inactiveHighscores{
     display: none;
 }
 
@@ -69,9 +71,11 @@
     list-style: none;
 }
 
-.quiz-box.option-list.options{
+.options{
     margin: 10px;
     border-radius: 5px;
+    color: var(--text-color-with-background);
+    padding: 5px;
     background-color: var(--background-color);
     list-style:none;
     cursor: pointer;
@@ -80,13 +84,9 @@
     justify-content: space-between;
 }
 
-.quiz-box.option-list.option:hover{
+.options:hover{
     background-color: var(--background-color-on-hover);
     transition: .2s;
-}
-
-.quiz-box.option-list.option.disabled{
-    pointer-events: none;
 }
 
 .correct-wrong{
