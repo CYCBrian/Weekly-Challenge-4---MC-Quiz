@@ -76,41 +76,100 @@ var timerCount = 60;
 var userScore = 0;
 var selectedQuestion;
 var originalQuizQuestions = [...quizQuestions];
-var timer=
+var timer;
+var nameInput = document.querySelector(".name-input");
+
 
 window.addEventListener('load', function() {
-    quizBox.classList.add("inactiveQuiz");
-    resultBox.classList.add("inactiveResult");
-    highscoresBox.classList.add("inactiveHighscores");
+    hide(quizBox);
+    hide(resultBox);
+    hide(highscoresBox);
 });
 
 viewHighscores.addEventListener('click',function(){
-    startBox.classList.add("inactiveStart");
-    quizBox.classList.add("inactiveQuiz");
-    resultBox.classList.add("inactiveResult");
-    highscoresBox.classList.remove("inactiveHighscores");
+    hide(startBox);
+    hide(quizBox);
+    hide(resultBox);
+    showHighscores();
 })
 
-submitBtn.addEventListener('click',function(){
-    startBox.classList.add("inactiveStart");
-    quizBox.classList.add("inactiveQuiz");
-    resultBox.classList.add("inactiveResult");
-    highscoresBox.classList.remove("inactiveHighscores");
+function showHighscores(){
+    var highScores = getScores();
+    highscoresList.innerHTML = "";
+    highScores.forEach(function(highScore){
+        var scoreItem = document.createElement("li");
+        scoreItem.textContent = highScore.initials + " - " + highScore.score;
+        highscoresList.appendChild(scoreItem);
+        scoreItem.classList.add("score-list");
+    })
+    show(highscoresBox);
+}
+
+clearBtn.addEventListener('click', function(){
+    clearScores();
+    showHighscores();
+})
+
+submitBtn.addEventListener('click',function(event){
+    event.preventDefault();
+    if (nameInput.value.trim() === ""){
+        alert("Enter a name.")
+        return false;
+    }
+    addScore(nameInput.value);
+    hide(startBox);
+    hide(quizBox);
+    hide(resultBox);
+    showHighscores();
 });
 
 restartBtn.addEventListener('click',function(){
-    startBox.classList.remove("inactiveStart")
-    quizBox.classList.add("inactiveQuiz");
-    resultBox.classList.add("inactiveResult");
-    highscoresBox.classList.add("inactiveHighscores");
+    show(startBox);
+    hide(quizBox);
+    hide(resultBox);
+    hide(highscoresBox);
     quizQuestions = [...originalQuizQuestions];
+    userScore = 0;
 })
 
-function gameOver(){
-    quizBox.classList.add("inactiveQuiz");
-    resultBox.classList.remove("inactiveResult");
+
+
+function hide(element){
+    element.classList.add("inactive");
 }
 
+function show(element){
+    element.classList.remove('inactive');
+}
+
+function gameOver(){
+    hide(quizBox)
+    show(resultBox)
+    quizResults.textContent = "You scored " + userScore + "!";
+}
+
+//  takes the list of scores from local storage and sorts them in descending order
+function getScores(){
+    var scoresString = localStorage.getItem("highscores") || "[]";
+    var scores = JSON.parse(scoresString);
+    scores.sort(function(a,b){
+        return b.score - a.score;
+    });
+    return scores;
+}
+
+function addScore(initials){
+    var scores = getScores();
+    scores.push({
+        initials: initials,
+        score: userScore
+    });
+    localStorage.setItem("highscores", JSON.stringify(scores));
+}
+
+function clearScores(){
+    localStorage.setItem("highscores", "[]");
+}
 
 function startTimer() {
     timerCount = 60
@@ -131,7 +190,6 @@ function displayQuestion() {
       clearInterval(timer);
       return;
     }
-
     var randomIndex = Math.floor(Math.random() * quizQuestions.length);
     selectedQuestion = quizQuestions[randomIndex];
     questionElement.textContent = selectedQuestion.question;
@@ -150,7 +208,6 @@ function displayQuestion() {
       });
     }
   }
-
   function optionSelected(answer){
     var userAns = answer.textContent;
     var correctAns = selectedQuestion.answer;
@@ -159,15 +216,16 @@ function displayQuestion() {
         correctWrong.textContent = "Correct!";
       } else {
         timerCount -=3;
-        correctWrong.textContent = "Wrong!";
+        correctWrong.textContent = "Wrong!";  
+        timerDisplay.textContent = timerCount;
       }
     displayQuestion();
   }
 
 startBtn.addEventListener("click", function() {
-  startBox.classList.add("inactiveStart");
-  quizBox.classList.remove("inactiveQuiz");
+    hide(startBox);
+    show(quizBox);
   startTimer();
   displayQuestion();
+  correctWrong.textContent = "";
 });
-
