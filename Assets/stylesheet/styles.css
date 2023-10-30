@@ -66,6 +66,10 @@
     display: none;
 }
 
+.inactive{
+    display: none;
+}
+
 .option-list{
     padding-left: 10px;
     list-style: none;
