@@ -1,34 +1,39 @@
-:root{
-    --background-color: rgb(140,40,230);
-    --background-color-on-hover: rgb(160,115,200);
+/* Define CSS custom properties (variables) for reusing colors and styles */
+:root {
+    --background-color: rgb(140, 40, 230);
+    --background-color-on-hover: rgb(160, 115, 200);
     --text-color-with-background: aliceblue;
 }
 
-
-*{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/* Apply a common font family to all elements */
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.top-bar{
+/* Style for the top bar containing highscores link */
+.top-bar {
     display: flex;
     justify-content: space-between;
     margin: 1%;
 }
 
-.view-highscores{
+/* Style for the "View Highscores" link */
+.view-highscores {
     text-decoration: none;
     cursor: pointer;
     margin-top: 0;
 }
 
-.timer{
+/* Style for the timer element */
+.timer {
     display: flex;
 }
 
+/* Style for various buttons (start, submit, restart, clear) */
 .start-btn,
 .submit-btn,
 .restart-btn,
-.clear-btn{
+.clear-btn {
     background-color: var(--background-color);
     color: var(--text-color-with-background);
     border-radius: 5px;
@@ -37,83 +42,82 @@
     cursor: pointer;
 }
 
+/* Hover styles for buttons */
 .start-btn:hover,
 .submit-btn:hover,
 .restart-btn:hover,
-.clear-btn:hover{
+.clear-btn:hover {
     background-color: var(--background-color-on-hover);
-    transition: .2s;
+    transition: 0.2s;
     border-color: var(--background-color-on-hover);
 }
 
+/* Styles for various boxes (start, quiz, result, highscores) */
 .start-box,
 .quiz-box,
 .result-box,
-.highscores-box{
+.highscores-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.start-box.inactiveStart,
-.quiz-box.inactiveQuiz,
-.result-box.inactiveResult,
-.highscores-box.inactiveHighscores{
+/* Generic class to hide elements */
+.inactive {
     display: none;
 }
 
-.inactive{
-    display: none;
-}
-
-.option-list{
+/* Style for the list of options within questions */
+.option-list {
     padding-left: 10px;
     list-style: none;
 }
 
-.options{
+/* Style for individual answer options */
+.options {
     margin: 10px;
     border-radius: 5px;
     color: var(--text-color-with-background);
     padding: 5px;
     background-color: var(--background-color);
-    list-style:none;
+    list-style: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.options:hover{
+/* Hover styles for answer options */
+.options:hover {
     background-color: var(--background-color-on-hover);
-    transition: .2s;
+    transition: 0.2s;
 }
 
-.correct-wrong{
+/* Style for displaying correct or wrong answers */
+.correct-wrong {
     margin-top: 20px;
 }
 
-.highscores-title{
+/* Style for the title of highscores */
+.highscores-title {
     margin-bottom: 5px;
 }
 
-.highscores-list{
+/* Style for the list of highscores */
+.highscores-list {
     padding: 0px;
     margin-top: 0px;
 }
 
-.score-list{
+/* Style for individual highscores in the list */
+.score-list {
     margin: 10px;
     border-radius: 5px;
     padding: 5px;
     background-color: var(--background-color-on-hover);
     color: var(--text-color-with-background);
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
