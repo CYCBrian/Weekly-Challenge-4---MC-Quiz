@@ -97,10 +97,21 @@
     margin-top: 20px;
 }
 
-.highscores-box.highscores-list.score-list{
+.highscores-title{
+    margin-bottom: 5px;
+}
+
+.highscores-list{
+    padding: 0px;
+    margin-top: 0px;
+}
+
+.score-list{
     margin: 10px;
     border-radius: 5px;
+    padding: 5px;
     background-color: var(--background-color-on-hover);
+    color: var(--text-color-with-background);
     list-style: none;
     display: flex;
     align-items: center;
