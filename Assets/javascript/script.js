@@ -7,9 +7,9 @@ var quizQuestions = [
         answer: "1answer text",
         options: [
             "1incorrect answer text",
-            "1answer text",
             "1incorrect answer text",
-            "1incorrect answer text"
+            "1incorrect answer text",
+            "1answer text"
         ]
     },
     {
@@ -28,8 +28,8 @@ var quizQuestions = [
         question: "3question text",
         answer: "3answer text",
         options: [
-            "3incorrect answer text",
             "3answer text",
+            "3incorrect answer text",
             "3incorrect answer text",
             "3incorrect answer text"
         ]
@@ -40,9 +40,9 @@ var quizQuestions = [
         answer: "4answer text",
         options: [
             "4incorrect answer text",
-            "4answer text",
             "4incorrect answer text",
-            "4incorrect answer text"
+            "4incorrect answer text",
+            "4answer text"
         ]
     },
     {
@@ -51,8 +51,8 @@ var quizQuestions = [
         answer: "5answer text",
         options: [
             "5incorrect answer text",
-            "5answer text",
             "5incorrect answer text",
+            "5answer text",
             "5incorrect answer text"
         ]
     }
