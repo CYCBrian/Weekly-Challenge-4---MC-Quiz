@@ -12,6 +12,8 @@
 ## Description
 The Quiz Web App is an interactive web application that offers a random selection of multiple-choice questions. Users can take the quiz, record their scores, and submit their initials to the high score leaderboard. The application also includes a timer that penalizes incorrect answers by reducing the remaining time.
 
+Please note that the rules, questions, and answers are only placeholder text. The focus of this project was directed more so to me practicing javascript. What I'm trying to say is I didn't have time to write all that s#$t before the project due date. I literally have 2 hours left before I have to submit this and I haven't eating all day. I REQUIRE SUSTENANCE!
+
 ## Features
 
 1. **Randomly Generated Questions**
@@ -52,8 +54,9 @@ No dependencies and requirements.
     - Incorrect answers reduce the timer.
 
 4. **End of Quiz**
-    - After the last question or when the timer ends, see your final score.
+    - After the last question is answered or when the timer ends, see your final score.
     - Enter initials and submit your score.
+    - Alert appears if users did not enter initials.
 
 5. **Restarting the Quiz**
     - Click "Restart The Quiz" to start over.
@@ -75,10 +78,40 @@ No dependencies and requirements.
 
 ## Credits
 
+[Quiz App JavaScript with Timer | Multiple Choice in HTML, CSS & JavaScript - Ali Asian](https://www.youtube.com/watch?v=xZXW5SnCiWI&ab_channel=AliAslan)
+
+[Array.prototype.push() - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+[this - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
+[Document: createElement() method - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+
+[Array.prototype.splice() - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+[Node: appendChild() method - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+[Array.prototype.sort() - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+[Spread syntax (...) - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+[String.prototype.trim() - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
+
+[Storage: getItem() method - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem)
+
+[Storage: setItem() method - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem)
+
+[JSON.stringify() - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+
+[JSON.parse() - mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)
+
+A software engineer friend - Thanks Jad!
+
+Xpert Learning Assistant
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE). See the [LICENSE](LICENSE) file for details.
 - - -
-[Back to Top](#table-of-content)
+[Back to Top](#weekly-challenge-4---web-apis---quiz-web-app)
 - - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
