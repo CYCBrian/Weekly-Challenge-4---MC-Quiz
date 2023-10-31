@@ -3,57 +3,57 @@
 var quizQuestions = [
     {
         num: 1,
-        question: "1question text",
-        answer: "1answer text",
+        question: "1 question text",
+        answer: "1 answer text",
         options: [
-            "1incorrect answer text",
-            "1incorrect answer text",
-            "1incorrect answer text",
-            "1answer text"
+            "1 incorrect answer text",
+            "1 incorrect answer text",
+            "1 incorrect answer text",
+            "1 answer text"
         ]
     },
     {
         num: 2,
-        question: "2question text",
-        answer: "2answer text",
+        question: "2 question text",
+        answer: "2 answer text",
         options: [
-            "2incorrect answer text",
-            "2answer text",
-            "2incorrect answer text",
-            "2incorrect answer text"
+            "2 incorrect answer text",
+            "2 answer text",
+            "2 incorrect answer text",
+            "2 incorrect answer text"
         ]
     },
     {
         num: 3,
-        question: "3question text",
-        answer: "3answer text",
+        question: "3 question text",
+        answer: "3 answer text",
         options: [
-            "3answer text",
-            "3incorrect answer text",
-            "3incorrect answer text",
-            "3incorrect answer text"
+            "3 answer text",
+            "3 incorrect answer text",
+            "3 incorrect answer text",
+            "3 incorrect answer text"
         ]
     },
     {
         num: 4,
-        question: "4question text",
-        answer: "4answer text",
+        question: "4 question text",
+        answer: "4 answer text",
         options: [
-            "4incorrect answer text",
-            "4incorrect answer text",
-            "4incorrect answer text",
-            "4answer text"
+            "4 incorrect answer text",
+            "4 incorrect answer text",
+            "4 incorrect answer text",
+            "4 answer text"
         ]
     },
     {
         num: 5,
-        question: "5question text",
-        answer: "5answer text",
+        question: "5 question text",
+        answer: "5 answer text",
         options: [
-            "5incorrect answer text",
-            "5incorrect answer text",
-            "5answer text",
-            "5incorrect answer text"
+            "5 incorrect answer text",
+            "5 incorrect answer text",
+            "5 answer text",
+            "5 incorrect answer text"
         ]
     }
 ];
